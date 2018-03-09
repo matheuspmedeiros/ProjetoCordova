@@ -13,20 +13,63 @@
 	[class="ui-body ui-body-a ui-corner-all bat"]{
 		
 		width: 30%;
-		height: 45%;
-		float: right;
-		position: relative;
-		margin-left: 5px;
-
+		height: 30%;
+		margin-left: 5% ;
 	}
 	[class="ui-body ui-body-a ui-corner-all func"]{
 		
 		width: 30%;
-		height: 45%
+		height: 30%;
+		margin: 1%;
+		margin-left: 5%;
 		float: left;
-		position: absolute;
+		
+
 	}
 
+	[id="meuCanvasGraficoIdades"]{
+		
+		height:auto;
+		padding: 40px 0;	
+		border-radius:4px;
+		border:1px solid black;
+		box-shadow: inset 0 2px 3px 0 rgba(255,255,255,.3), inset 0 -3px 6px 0 rgba(0,0,0,.2), 0 3px 2px 0 rgba(0,0,0,.2);
+		background-image: linear-gradient(to bottom, #00CD00, #EEC900, #8B0000 100%);
+		margin-left: 35%;
+	}
+	[id="meuCanvasGraficoIdades2"]{
+		
+		height:auto;
+		padding: 40px 0;	
+		border-radius:4px;
+		border:1px solid black;
+		box-shadow: inset 0 2px 3px 0 rgba(255,255,255,.3), inset 0 -3px 6px 0 rgba(0,0,0,.2), 0 3px 2px 0 rgba(0,0,0,.2);
+		background-image: linear-gradient(to bottom,white 25%, #00CD00, #EEC900, #8B0000 80%);
+		margin-left: 30%;
+	}
+	[class="ui-body ui-body-a ui-corner-all graf"]{
+		display: block;
+		width: 200px;
+		height: 30%;
+		float: left;
+		margin: auto;
+		margin: 0px 30px;
+			
+	}
+	[class="ui-body ui-body-a ui-corner-all graf2"]{
+		display: block;
+		width: 200px;
+		height: 30%;
+		float: left;
+		margin: auto;
+		margin: 0px 30px;
+	}
+	[class="statusBar"]{
+		height: auto;
+		display: flex;
+		width: 100%;
+		justify-content: center;
+	}
 </style>
 	<body>
 		<font face="Georgia">
@@ -68,28 +111,23 @@
 		</div>
 
 		
-		<div data-role="content">      
-		  <div class="ui-body ui-body-a ui-corner-all bat">
-			<h3>Bateria</h3>
-		    <p align="justify">Por que íon de lítio?</br>
-				Comparadas com as baterias com tecnologia tradicional, as baterias de íon de lítio carregam mais rápido,
-				duram mais e têm maior densidade de carga, aumentando a vida útil da bateria mesmo em uma estrutura
-				menor. Quando você sabe como elas funcionam, pode aproveitar ao máximo a capacidade da sua bateria.</p>
-		  </div>
-		<div class="ui-body ui-body-a ui-corner-all func">
-			<h3>Funcionalidades</h3></br>
-			<p align="justify">Para que o uso desse dispositivos?</br>
-				O sistema com um todo vem com o proposito de reduzir custos da energia, mas não para grandes aparelhos, 
-				e sim para aqueles pequenos que ficam em "Stand By" o dia todo, mas, o real proposito do AquaForce é vem 
-				não ser somente um sistema para energia mas integrar com o conceito de reutilização, onde motores antigos
-				são reaproveitados no sistema.</p>
-
-
-		</div>
+		<div data-role="content">
+			<div class="statusBar">
+				<div class="ui-body ui-body-a ui-corner-all graf">
+					<p>Status da Primeira Bateria</p>
+					<canvas id="meuCanvasGraficoIdades" width="50" height="150">teste</canvas>
+					<p>100%</p>	
+				</div>
+				<div class="ui-body ui-body-a ui-corner-all graf2">
+					<p>Status da Segundo Bateria</p>
+					<canvas id="meuCanvasGraficoIdades2" width="50" height="150">teste</canvas>
+					<p>75%</p>	
+				</div>
+			</div>
 		</div>
 
 
-		<div data-role="footer" data-position="fixed">
+		<div data-role="footer" class="fixed"		>
 		  <h4>Projeto em Desenvolvimento https://github.com/weezzee/ProjetoCordova</h4>
 		</div>
 
@@ -99,7 +137,7 @@
 		
 	<div data-role="page" id="PagStatus">
 		<div data-role="header">
-			<h1>Status da Bateria</h1>	
+			<h1>O Sistema AquaForce</h1>	
 				
 			<a href="#inicio"
 				data-position="left"
@@ -109,11 +147,24 @@
 				
 		</div>
 
-		<div data-role="main" class="ui-content">
-			<div class="ui-body ui-body-a ui-corner-all ">
-				<h3>Status</h3>
-			      <p>A bateria está carregando normalmente.</p>
-		  </div>
+		<div data-role="main" class="ui-content a">
+			<!--div class="ui-body ui-body-a ui-corner-all " >-->
+				<div class="ui-body ui-body-a ui-corner-all bat">
+						<h3>Bateria</h3>
+			   				 <p align="justify">Por que íon de lítio?</br>
+									Comparadas com as baterias com tecnologia tradicional, as baterias de íon de lítio carregam mais rápido,
+									duram mais e têm maior densidade de carga, aumentando a vida útil da bateria mesmo em uma estrutura
+									menor. Quando você sabe como elas funcionam, pode aproveitar ao máximo a capacidade da sua bateria.</p>
+			   	 </div>
+				<div class="ui-body ui-body-a ui-corner-all func">
+						<h3>Funcionalidades</h3></br>
+							<p align="justify">Para que o uso desse dispositivos?</br>
+									O sistema com um todo vem com o proposito de reduzir custos da energia, mas não para grandes aparelhos, 
+									e sim para aqueles pequenos que ficam em "Stand By" o dia todo, mas, o real proposito 
+									do AquaForce é vem não ser somente um sistema para energia mas integrar com o conceito 
+									de reutilização, onde motores antigossão reaproveitados no sistema.</p>
+				</div>
+		 <!-- </div>-->
 		</div>
 
 		<div data-role="footer" data-position="fixed">
