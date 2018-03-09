@@ -6,8 +6,30 @@
 	<link rel="stylesheet" href="js/jquerymobile/jquery.mobile-1.4.5.min.css">
 	<script src="./js/jquery-2.2.4.min.js"></script>
 	<script src="./js/jquerymobile/jquery.mobile-1.4.5.min.js"></script>
+
+	<title >AquaForce - Prot </title>
 </head>
+<style type="text/css">
+	[class="ui-body ui-body-a ui-corner-all bat"]{
+		
+		width: 30%;
+		height: 45%;
+		float: right;
+		position: relative;
+		margin-left: 5px;
+
+	}
+	[class="ui-body ui-body-a ui-corner-all func"]{
+		
+		width: 30%;
+		height: 45%
+		float: left;
+		position: absolute;
+	}
+
+</style>
 	<body>
+		<font face="Georgia">
 
 	  <div data-role="page" id="inicio">
 	  
@@ -31,7 +53,7 @@
 		</div>
 		
 		<div data-role="header">
-		  <h1>Energy Controller</h1>
+		  <h1>AquaForce - Prototípo</h1>
 		  
 		  <a href="#painelDeMenuEsquerdo"
 				data-role="button"
@@ -47,17 +69,28 @@
 
 		
 		<div data-role="content">      
-		  <div class="ui-body ui-body-a ui-corner-all">
+		  <div class="ui-body ui-body-a ui-corner-all bat">
 			<h3>Bateria</h3>
-		      <p>Por que íon de lítio?
+		    <p align="justify">Por que íon de lítio?</br>
 				Comparadas com as baterias com tecnologia tradicional, as baterias de íon de lítio carregam mais rápido,
 				duram mais e têm maior densidade de carga, aumentando a vida útil da bateria mesmo em uma estrutura
 				menor. Quando você sabe como elas funcionam, pode aproveitar ao máximo a capacidade da sua bateria.</p>
 		  </div>
+		<div class="ui-body ui-body-a ui-corner-all func">
+			<h3>Funcionalidades</h3></br>
+			<p align="justify">Para que o uso desse dispositivos?</br>
+				O sistema com um todo vem com o proposito de reduzir custos da energia, mas não para grandes aparelhos, 
+				e sim para aqueles pequenos que ficam em "Stand By" o dia todo, mas, o real proposito do AquaForce é vem 
+				não ser somente um sistema para energia mas integrar com o conceito de reutilização, onde motores antigos
+				são reaproveitados no sistema.</p>
+
+
+		</div>
 		</div>
 
+
 		<div data-role="footer" data-position="fixed">
-		  <h4>Recurso Experimental</h4>
+		  <h4>Projeto em Desenvolvimento https://github.com/weezzee/ProjetoCordova</h4>
 		</div>
 
 	  </div>
@@ -77,14 +110,14 @@
 		</div>
 
 		<div data-role="main" class="ui-content">
-			<div class="ui-body ui-body-a ui-corner-all">
+			<div class="ui-body ui-body-a ui-corner-all ">
 				<h3>Status</h3>
 			      <p>A bateria está carregando normalmente.</p>
 		  </div>
 		</div>
 
 		<div data-role="footer" data-position="fixed">
-			<h1>Recurso Experimental</h1>
+			<h1>Projeto em Desenvolvimento https://github.com/weezzee/ProjetoCordova</h1>
 		</div>
 	</div> 
 	
@@ -92,7 +125,7 @@
 	
 	<div data-role="page" id="PagHistorico">
 	  <div data-role="header">
-		<h1>Energy Controller - Histórico de Geração</h1>
+		<h1>AquaForce - Prototípo</h1>
 		
 			<a href="#inicio"
 					data-position="left"
@@ -205,7 +238,7 @@
 	  </div>
 
 	  <div data-role="footer" data-position="fixed">
-		<h1>Recurso Experimental</h1>
+		<h1>Projeto em Desenvolvimento https://github.com/weezzee/ProjetoCordova</h1>
 	  </div>
 	</div> 
     
@@ -225,11 +258,18 @@
 	  </div>
 
 	  <div data-role="main" class="ui-content">
+	  	<div class="ui-body ui-body-a ui-corner-all func">
+	  		<h3>Projeto sendo desenvolvido por</h3>
+
+	  		<h4>Matheus Medeiros </br>https://github.com/weezzee</h4></br>
+	  		<h4>Gabriel Teófilo </br>https://github.com/GustavoTeofilo</h4></br>
+	  		<h4> Rafael Ramos </br>https://github.com/rskzones</h4></br>
+		</div>
 		
 	  </div>
 
 	  <div data-role="footer" data-position="fixed">
-		<h1>Recurso Experimental</h1>
+		<h1>Projeto em Desenvolvimento https://github.com/weezzee/ProjetoCordova</h1>
 	  </div>
 	</div> 
 	
