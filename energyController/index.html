@@ -1,347 +1,229 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<link rel="stylesheet" href="js/jquerymobile/jquery.mobile-1.4.5.min.css">
-	<script src="./js/jquery-2.2.4.min.js"></script>
-	<script src="./js/jquerymobile/jquery.mobile-1.4.5.min.js"></script>
-
-	<title >AquaForce - Prot </title>
-</head>
-<style type="text/css">
-	[class="ui-body ui-body-a ui-corner-all bat"]{
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		display: block;
-		height: 30%;
-		width: 30%;
-		margin-left: 5% ;
-		float: left;
-	}
-	[class="ui-body ui-body-a ui-corner-all func"]{
-		
-		display: block;
-		height: 30%;
-		width: 30%;
-		margin-left: 5% ;
-		float: left;
+		<link rel="stylesheet" href="css/style.css" type="text/css">
+		<link rel="stylesheet" href="js/jquerymobile/jquery.mobile-1.4.5.min.css">
+		<script src="./js/jquery-2.2.4.min.js"></script>
+		<script src="./js/jquerymobile/jquery.mobile-1.4.5.min.js"></script>
 
-	}
-
-	[id="meuCanvasGraficoIdades"]{
-		
-		height:auto;
-		padding: 40px 0;	
-		border-radius:4px;
-		border:1px solid black;
-		box-shadow: inset 0 2px 3px 0 rgba(255,255,255,.3), inset 0 -3px 6px 0 rgba(0,0,0,.2), 0 3px 2px 0 rgba(0,0,0,.2);
-		background-image: linear-gradient(to bottom, #00CD00, #EEC900, #8B0000 100%);
-		margin-left: 35%;
-	}
-	[id="meuCanvasGraficoIdades2"]{
-		
-		height:auto;
-		padding: 40px 0;	
-		border-radius:4px;
-		border:1px solid black;
-		box-shadow: inset 0 2px 3px 0 rgba(255,255,255,.3), inset 0 -3px 6px 0 rgba(0,0,0,.2), 0 3px 2px 0 rgba(0,0,0,.2);
-		background-image: linear-gradient(to bottom,white 25%, #00CD00, #EEC900, #8B0000 80%);
-		margin-left: 35%;
-	}
-	[class="ui-body ui-body-a ui-corner-all graf"]{
-		display: block;
-		width: 200px;
-		height: 30%;
-		float: left;
-		margin: auto;
-		margin: 0px 30px;
-			
-	}
-	[class="ui-body ui-body-a ui-corner-all graf2"]{
-		display: block;
-		width: 200px;
-		height: 30%;
-		float: left;
-		margin: auto;
-		margin: 0px 30px;
-
-	}
-	[class="statusBar"]{
-		height: auto;
-		display: flex;
-		width: 100%;
-		justify-content: center;
-	}
-	[class="ui-body ui-body-a ui-corner-all sobre"]{
-		position: absolute;
-		width: auto;
-		height: auto;
-	}
-	[class="ui-content a"]{
-		height: auto;
-		display: flex;
-		width: 100%;
-		justify-content: center;
-	}
-</style>
+		<title >EnergyController</title>
+	</head>
 	<body>
 		<font face="Arial">
+		<div data-role="page" id="inicio">
+		  
+		  <!--PAINEL-->
+		  
+			<div data-role="panel"
+				 id="painelDeMenuEsquerdo"
+				 data-theme="a"
+			 data-position="left" data-display="push">      
+			  <h3>Opções</h3>
 
-	  <div data-role="page" id="inicio">
-	  
-	  <!--PAINEL-->
-	  
-		<div data-role="panel"
-			 id="painelDeMenuEsquerdo"
-			 data-theme="a"
-		 data-position="left" data-display="push">      
-		  <h3>Opções</h3>
-
-		  <a href="#PagHistorico"
-			data-role="button"
-			data-icon="search"
-		  >Histórico de Geração</a>
-		  
-		  <a href="#PagStatus"
-			 data-role="button"
-			 data-icon="edit" 
-			>Sobre o Sistema</a>
-		 
-		  
-		</div>
-		
-		<div data-role="header">
-		  <h1>AquaForce - Prototípo</h1>
-		  
-		  <a href="#painelDeMenuEsquerdo"
+				<a href="#PagHistorico"
 				data-role="button"
-				data-icon="bars" 
-				data-iconpos="notext">Menu</a>
-		 
-		 <a href="#PagSobre"
-				data-position="right"
+				data-icon="search"
+				>Histórico de Geração</a>
+			  
+				<a href="#PagStatus"
 				data-role="button"
-				data-icon="grid" 
-				data-iconpos="notext">Menu</a>
-		</div>
+				data-icon="edit" 
+				>Sobre o Sistema</a>
+				
+				<a href="#PagConfig"
+				data-role="button"
+				data-icon="gear" 
+				>Configurações</a>
+				
+				<a href="/login2.html"
+				data-role="button"
+				data-icon="delete" 
+				>Sair do Sistema</a>
+			 
+			  
+			</div>
+			
+			<div data-role="header">
+			  <h1>EnergyController - Prototípo</h1>
+			  
+			  <a href="#painelDeMenuEsquerdo"
+					data-role="button"
+					data-icon="bars" 
+					data-iconpos="notext">Menu</a>
+			 
+			 <a href="#PagSobre"
+					data-position="right"
+					data-role="button"
+					data-icon="grid" 
+					data-iconpos="notext">Menu</a>
+			</div>
 
-		
-		<div data-role="content" class="ui-content a">
-			<div class="statusBar">
-				<div class="ui-body ui-body-a ui-corner-all graf">
-					<p>Status da Primeira Bateria</p>
-					<canvas id="meuCanvasGraficoIdades" width="50" height="150">teste</canvas>
-					<p>100%</p>	
+			
+			<div data-role="content">
+				<div class="statusBar">
+					<div class="ui-body primBat">
+						<p>Status da Primeira Bateria</p>
+						<canvas id="meuCanvasGraficoIdades" width="50" height="150">teste</canvas>
+						<p style="text-align: center">100%</p>	
+         			</div>
+					<!--<div class="ui-body ui-body-a ui-corner-all graf">
+						<p>Status da Primeira Bateria</p>
+						<canvas id="meuCanvasGraficoIdades" width="50" height="150">teste</canvas>
+						<p>100%</p>	
+					</div>-->
+					<div class="ui-body segBat">
+						<p>Status da Segunda Bateria</p>
+						<canvas id="meuCanvasGraficoIdades2" width="50" height="150">teste</canvas>
+						<p style="text-align: center">75%</p>	
+					</div>
 				</div>
-				<div class="ui-body ui-body-a ui-corner-all graf2">
-					<p>Status da Segundo Bateria</p>
-					<canvas id="meuCanvasGraficoIdades2" width="50" height="150">teste</canvas>
-					<p>75%</p>	
+			</div>
+
+
+			<div data-role="footer" data-position="fixed">
+			  <h1><a href=" https://github.com/weezzee/ProjetoCordova">GitHub/weezzee/ProjetoCordova</a></h1>
+			</div>
+
+		  </div>
+		  
+		  <!--PÁGINA DE STATUS DA BATERIA -->
+			
+		<div data-role="page" id="PagStatus">
+			<div data-role="header">
+				<h1>O Sistema EnergyController</h1>	
+					
+				<a href="#inicio"
+					data-position="left"
+					data-role="button"
+					data-icon="back" 
+					data-iconpos="notext">Menu</a>
+					
+			</div>
+
+			<div data-role="main" class="ui-content a">
+				<!--div class="ui-body ui-body-a ui-corner-all " >-->
+					<div class="ui-body ui-body-a ui-corner-all bat">
+							<h3>Bateria</h3>
+								 <p align="justify">Por que íon de lítio?</br>
+										Comparadas com as baterias com tecnologia tradicional, as baterias de íon de lítio carregam mais rápido,
+										duram mais e têm maior densidade de carga, aumentando a vida útil da bateria mesmo em uma estrutura
+										menor. Quando você sabe como elas funcionam, pode aproveitar ao máximo a capacidade da sua bateria.</p>
+					 </div>
+					<div class="ui-body ui-body-a ui-corner-all func">
+							<h3>Funcionalidades</h3></br>
+								<p align="justify">Para que o uso desse dispositivos?</br>
+										O sistema com um todo vem com o proposito de reduzir custos da energia, mas não para grandes aparelhos, 
+										e sim para aqueles pequenos que ficam em "Stand By" o dia todo, mas, o real proposito 
+										do AquaForce é vem não ser somente um sistema para energia mas integrar com o conceito 
+										de reutilização, onde motores antigos são reaproveitados no sistema.</p>
+					</div>
+			 <!-- </div>-->
+			</div>
+
+			<div data-role="footer" data-position="fixed">
+				<h1><a href=" https://github.com/weezzee/ProjetoCordova">GitHub/weezzee/ProjetoCordova</a></h1>
+			</div>
+		</div> 
+		
+		<!-- PÁGINA DE HISTÓRICO DA BATERIA -->
+		
+		<div data-role="page" id="PagHistorico">
+		  <div data-role="header">
+			<h1>EnergyController - Prototípo</h1>
+			
+				<a href="#inicio"
+						data-position="left"
+						data-role="button"
+						data-icon="back" 
+						data-iconpos="notext">Inicio
+				</a>
+			
+		  </div>
+
+		  <div data-role="main" class="ui-content">
+			<h3>Histórico de Geração</h3>
+			<table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
+			  <thead>
+				<tr>
+				  <th data-priority="2">Período</th>
+				  <th>Dia</th>
+				  <th data-priority="3">Gerado</th>
+				  <th data-priority="1">%</th>
+				  <th data-priority="5">Reviews</th>
+				</tr>
+			  </thead>
+			  <tbody>
+				<tr>
+				  <th>1</th>
+				  <td><a>10-03-2018</a></td>
+				  <td>900mAh</td>
+				  <td>100%</td>
+				  <td>74</td>
+				</tr>
+				
+			  </tbody>
+			</table>
+		  </div>
+
+		  <div data-role="footer" data-position="fixed">
+			<h1><a href=" https://github.com/weezzee/ProjetoCordova">GitHub/weezzee/ProjetoCordova</a></h1>
+		  </div>
+		</div> 
+		
+		<!-- PÁGINA DE CONFIGURAÇÕES -->
+		
+		<div data-role="page" id="PagSobre">
+		  <div data-role="header">
+			<h1>Sobre</h1>
+			
+				<a href="#inicio"
+						data-position="left"
+						data-role="button"
+						data-icon="back" 
+						data-iconpos="notext">Inicio
+				</a>
+			
+		  </div>
+
+		<div data-role="main" class="ui-content">
+				
+			<div class="card-grid">
+				<div class="card-wrap">
+					<div class="card">
+					  <div>
+						<h4>Gustavo Teofilo</h4>
+						<p>Desenvolvedor do Projeto</p>
+						<p><a href="https://github.com/GustavoTeofilo">GitHub/GustavoTeofilo</a></p>
+					  </div>
+					</div>
+				</div>
+				<div class="card-wrap">
+					<div class="card">
+					  <div>
+						<h4>Matheus Medeiros</h4>
+						<p>Desenvolvedor do Projeto</p>
+						<p><a href="https://github.com/weezzee">GitHub/weezzee</a></p>
+					  </div>
+					</div>
+				</div>
+				<div class="card-wrap">
+					<div class="card">
+					  <div>
+						<h4>Rafael Ramos</h4>
+						<p>Desenvolvedor do Projeto</p>
+						<p><a href="https://github.com/rskzones">GitHub/rskzones</a></p>
+					  </div>
+					</div>
 				</div>
 			</div>
 		</div>
 
-		<div data-role="footer" data-position="fixed">
-
-		  <h4>Projeto em Desenvolvimento https://github.com/weezzee/ProjetoCordova</h4>
-		</div>
-
-	  </div>
-	  
-	  <!--PÁGINA DE STATUS DA BATERIA -->
-		
-	<div data-role="page" id="PagStatus">
-		<div data-role="header">
-			<h1>O Sistema AquaForce</h1>	
-				
-			<a href="#inicio"
-				data-position="left"
-				data-role="button"
-				data-icon="back" 
-				data-iconpos="notext">Menu</a>
-				
-		</div>
-
-		<div data-role="main" class="ui-content a">
-			<!--div class="ui-body ui-body-a ui-corner-all " >-->
-				<div class="ui-body ui-body-a ui-corner-all bat">
-						<h3>Bateria</h3>
-			   				 <p align="justify">Por que íon de lítio?</br>
-									Comparadas com as baterias com tecnologia tradicional, as baterias de íon de lítio carregam mais rápido,
-									duram mais e têm maior densidade de carga, aumentando a vida útil da bateria mesmo em uma estrutura
-									menor. Quando você sabe como elas funcionam, pode aproveitar ao máximo a capacidade da sua bateria.</p>
-			   	 </div>
-				<div class="ui-body ui-body-a ui-corner-all func">
-						<h3>Funcionalidades</h3></br>
-							<p align="justify">Para que o uso desse dispositivos?</br>
-									O sistema com um todo vem com o proposito de reduzir custos da energia, mas não para grandes aparelhos, 
-									e sim para aqueles pequenos que ficam em "Stand By" o dia todo, mas, o real proposito 
-									do AquaForce é vem não ser somente um sistema para energia mas integrar com o conceito 
-									de reutilização, onde motores antigossão reaproveitados no sistema.</p>
-				</div>
-		 <!-- </div>-->
-		</div>
-
-		<div data-role="footer" data-position="fixed">
-			<h1>Projeto em Desenvolvimento https://github.com/weezzee/ProjetoCordova</h1>
-		</div>
-	</div> 
-	
-	<!-- PÁGINA DE HISTÓRICO DA BATERIA -->
-	
-	<div data-role="page" id="PagHistorico">
-	  <div data-role="header">
-		<h1>AquaForce - Prototípo</h1>
-		
-			<a href="#inicio"
-					data-position="left"
-					data-role="button"
-					data-icon="back" 
-					data-iconpos="notext">Inicio
-			</a>
-		
-	  </div>
-
-	  <div data-role="main" class="ui-content">
-		<h3>Histórico de Geração</h3>
-		<table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
-		  <thead>
-			<tr>
-			  <th data-priority="2">Período</th>
-			  <th>Dia</th>
-			  <th data-priority="3">Gerado</th>
-			  <th data-priority="1">%</th>
-			  <th data-priority="5">Reviews</th>
-			</tr>
-		  </thead>
-		  <tbody>
-			<tr>
-			  <th>1</th>
-			  <td><a>10-03-2018</a></td>
-			  <td>900mAh</td>
-			  <td>100%</td>
-			  <td>74</td>
-			</tr>
-			<tr>
-			  <th>2</th>
-			  <td><a href="http://en.wikipedia.org/wiki/Casablanca_(film)" data-rel="external">Casablanca</a></td>
-			  <td>1942</td>
-			  <td>97%</td>
-			  <td>64</td>
-			</tr>
-			<tr>
-			  <th>3</th>
-			  <td><a href="http://en.wikipedia.org/wiki/The_Godfather" data-rel="external">The Godfather</a></td>
-			  <td>1972</td>
-			  <td>97%</td>
-			  <td>87</td>
-			</tr>
-			<tr>
-			  <th>4</th>
-			  <td><a href="http://en.wikipedia.org/wiki/Gone_with_the_Wind_(film)" data-rel="external">Gone with the Wind</a></td>
-			  <td>1939</td>
-			  <td>96%</td>
-			  <td>87</td>
-			</tr>
-			<tr>
-			  <th>5</th>
-			  <td><a href="http://en.wikipedia.org/wiki/Lawrence_of_Arabia_(film)" data-rel="external">Lawrence of Arabia</a></td>
-			  <td>1962</td>
-			  <td>94%</td>
-			  <td>87</td>
-			</tr>
-			<tr>
-			  <th>6</th>
-			  <td><a href="http://en.wikipedia.org/wiki/Dr._Strangelove" data-rel="external">Dr. Strangelove Or How I Learned to Stop Worrying and Love the Bomb</a></td>
-			  <td>1964</td>
-			  <td>92%</td>
-			  <td>74</td>
-			</tr>
-			<tr>
-			  <th>7</th>
-			  <td><a href="http://en.wikipedia.org/wiki/The_Graduate" data-rel="external">The Graduate</a></td>
-			  <td>1967</td>
-			  <td>91%</td>
-			  <td>122</td>
-			</tr>
-			<tr>
-			  <th>8</th>
-			  <td><a href="http://en.wikipedia.org/wiki/The_Wizard_of_Oz_(1939_film)" data-rel="external">The Wizard of Oz</a></td>
-			  <td>1939</td>
-			  <td>90%</td>
-			  <td>72</td>
-			</tr>
-			<tr>
-			  <th>9</th>
-			  <td><a href="http://en.wikipedia.org/wiki/Singin%27_in_the_Rain" data-rel="external">Singin' in the Rain</a></td>
-			  <td>1952</td>
-			  <td>89%</td>
-			  <td>85</td>
-			</tr>
-			<tr>
-			  <th>10</th>
-			  <td class="title"><a href="http://en.wikipedia.org/wiki/Inception" data-rel="external">Inception</a></td>
-			  <td>2010</td>
-			  <td>84%</td>
-			  <td>78</td>
-			</tr>
-			<tr>
-			  <th>11</th>
-			  <td class="title"><a href="http://en.wikipedia.org/wiki/Inception" data-rel="external">Inception</a></td>
-			  <td>2010</td>
-			  <td>84%</td>
-			  <td>78</td>
-			</tr>
-			<tr>
-			  <th>12</th>
-			  <td class="title"><a href="http://en.wikipedia.org/wiki/Inception" data-rel="external">Inception</a></td>
-			  <td>2010</td>
-			  <td>84%</td>
-			  <td>78</td>
-			</tr>
-		  </tbody>
-		</table>
-	  </div>
-
-	  <div data-role="footer" data-position="fixed">
-		<h1>Projeto em Desenvolvimento https://github.com/weezzee/ProjetoCordova</h1>
-	  </div>
-	</div> 
-    
-	<!-- PÁGINA DE CONFIGURAÇÕES -->
-	
-	<div data-role="page" id="PagSobre">
-	  <div data-role="header">
-		<h1>Sobre</h1>
-		
-			<a href="#inicio"
-					data-position="left"
-					data-role="button"
-					data-icon="back" 
-					data-iconpos="notext">Inicio
-			</a>
-		
-	  </div>
-
-	  <div data-role="main" class="ui-content">
-
-	  	<div class="ui-body ui-body-a ui-corner-all sobre">
-	  		<h3>Projeto sendo desenvolvido por</h3>
-
-	  		<h4>Matheus Medeiros </br>https://github.com/weezzee</h4></br>
-	  		<h4>Gustavo Teófilo </br>https://github.com/GustavoTeofilo</h4></br>
-	  		<h4> Rafael Ramos </br>https://github.com/rskzones</h4></br>
-		</div>
-		
-	  </div>
-
-	  <div data-role="footer" data-position="fixed">
-		<h1>Projeto em Desenvolvimento https://github.com/weezzee/ProjetoCordova</h1>
-	  </div>
-	</div> 
-	
-	
-
+		  <div data-role="footer" data-position="fixed">
+			<h1><a href=" https://github.com/weezzee/ProjetoCordova">GitHub/weezzee/ProjetoCordova</a></h1>
+		  </div>
+		</div> 
 	</body>
 </html>
 
@@ -352,4 +234,3 @@
 	   Botoes
 	   http://demos.jquerymobile.com/1.2.1/docs/buttons/buttons-icons.html
 	-->        
-
